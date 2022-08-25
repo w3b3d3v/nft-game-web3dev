@@ -16,7 +16,7 @@ const App = () => {
           <div className="connect-wallet-container">
             <img
               src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
-              alt="Monty Python Gif"
+              alt="Nascimento Gif"
             />
           </div>
         </div>
