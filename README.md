@@ -1,15 +1,15 @@
-# buildspace NFT Game Project
+# WEB3DEV NFT Game
 
-### **Welcome 👋**
-To get started with this course, clone this repo and follow these commands:
+### **Bem-vind@ 👋**
+Para iniciar o projeto, clone esse repo e siga esses comandos:
 
-1. Run `npm install` at the root of your directory
-2. Run `npm run start` to start the project
-3. Start coding!
+1. Rode `npm install` na raíz do seu projeto
+2. Rode `npm run start` para iniciar
+3. Comece a codar!
 
-### What is the `.vscode` Folder?
-If you use VSCode to build your app, we included a list of suggested extensions that will help you build this project! Once you open this project in VSCode, you will see a popup asking if you want to download the recommended extensions :).
+### O que é a pasta `.vscode`?
+Se você usa VSCode, incluímos uma lista de extensões sugeridas que vão ajudar nesse projeto! Assim que abrir esse projeto, verá um popup perguntando se deseja instalar essas extenções :).
 
 
-### **Questions?**
-Have some questions make sure you head over to your [buildspace Dashboard](https://app.buildspace.so/courses/CO5cc2751b-e878-41c4-99fa-a614dc910ee9) and link your Discord account so you can get access to helpful channels teaching assistants, and your instructor!
+### **Perguntas?**
+Se tiver perguntas, entre no [Discord da WEB3DEV](https://discord.web3dev.com.br) e faça suas perguntas nas sessões de ajuda desse bootcamp.
