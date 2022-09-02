@@ -1,16 +1,16 @@
 .App {
   height: 100vh;
-  background-color: #0d1116;
+  background-color: #141414;
   overflow: scroll;
   text-align: center;
 }
 
 .container {
   height: 100%;
-  background-color: #0d1116;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 
 .header-container {
@@ -19,7 +19,7 @@
 
 .header {
   margin: 0;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
   color: white;
 }
@@ -86,6 +86,92 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
+}
+
+ul > li > span {
+  color: white;
+}
+
+.boss-card {
+  width:530px;
+  height: 197px;
+  border:1px solid rgba(255, 255, 255, 0.5);
+  text-align: left;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.boss-card > img {
+  width: 350px;
+  padding: 0;
+}
+
+.boss-card > ul {
+  list-style-type: none;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: gray;
+}
+
+.boss-card > ul > li {
+  padding: 2px;
+  border-bottom: 1px solid rgba(86, 31, 55, 0.5);
+  margin-right: 15px;
+}
+
+.heroes {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.hero-card {
+  width: 170px;
+  height: 250px;
+  border:1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.hero-card > ul {
+  list-style-type: none;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: gray;
+  margin-bottom: 0;
+}
+
+.hero-card > ul > li {
+  padding: 2px;
+  border-bottom: 1px solid rgba(86, 31, 55, 0.5);
+  margin-right: 15px;
+}
+
+.hero-card > img {
+  width: 170px;
+  height: 113px;
+  padding:0;
+}
+
+.hero-card > button {
+  border-radius: 2px;
+  height: 15px;
+  float: right;
+  margin: 5px 19px 0 auto;
+  cursor: pointer;
+  color: white;
+  font-size: 10px;
+  border: none;
+  background-color: rgba(86, 31, 55, 0.5);
 }
 
 .footer-container {

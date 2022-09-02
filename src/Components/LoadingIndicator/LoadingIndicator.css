@@ -1,5 +1,39 @@
 /* Code found on https://loading.io/css/ */
-.lds-ring {
+.loading-indicator {
+  position: absolute;
+  padding-top: 80px;
+  top: 25%;
+  left: 43%;
+}
+
+.loading-hadouken {
+  margin-bottom: 60px;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.loading-hadouken > img {
+  width:100px;
+}
+
+.loading-indicator > p {
+  line-height: 0;
+  align-self: center;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 0 #F00, -2px 0 #F00, 0 2px #F00, 0 -2px #F00,
+               1px 1px #F00, -1px -1px #F00, 1px -1px #F00, -1px 1px #F00;
+
+}
+
+@keyframes example {
+  0%   {background-color:none; left:-90px; top:0px;}
+  100%  {background-color:none; left:140px; top:0px;}
+}
+/* .lds-ring {
   display: inline-block;
   position: relative;
   width: 80px;
@@ -33,4 +67,4 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */

@@ -3,11 +3,11 @@ import './LoadingIndicator.css';
 
 const LoadingIndicator = () => {
   return (
-    <div className="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="loading-indicator">
+      <div className="loading-hadouken">
+        <img src="https://cdn3.emoji.gg/emojis/6945_hadouken_right.png" />
+      </div>
+      <p>Hadouken!</p>
     </div>
   );
 };
