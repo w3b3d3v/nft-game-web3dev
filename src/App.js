@@ -1,37 +1,23 @@
-import React from "react"
-import twitterLogo from "./assets/twitter-logo.svg"
-import "./App.css"
-
-// Constants
-const TWITTER_HANDLE = "web3dev_"
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import "./App.css";
+import Inventory from "./Components/Inventory";
+import SelectCharacter from "./Components/SelectCharacter";
+import ArenaPage from "./Pages/ArenaPage";
+import Dashboard from "./Pages/Dashboard";
+import Login from "./Pages/Login";
 
 const App = () => {
   return (
-    <div className="App">
-      <div className="container">
-        <div className="header-container">
-          <p className="header gradient-text">⚔️ Batalhas no Metaverso ⚔️</p>
-          <p className="sub-text">Junte-se a mim para vencer os inimigos do Metaverso!</p>
-          <div className="connect-wallet-container">
-            <img
-              src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
-              alt="Nascimento Gif"
-            />
-          </div>
-        </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`construído por @${TWITTER_HANDLE}`}</a>
-        </div>
-      </div>
-    </div>
-  )
-}
 
-export default App
+    <Switch>
+      <Route exact path="/" component={ Login } />
+      <Route exact path="/dashboard" component={ Dashboard } />
+      <Route exact path="/characterselect" component={ SelectCharacter } />
+      <Route exact path="/inventory" component={ Inventory } />
+      <Route exact path="/arena" component={ ArenaPage } />
+    </Switch>
+  );
+};
+
+export default App;

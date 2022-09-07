@@ -1,0 +1,13 @@
+/* header {
+    direction: flex;
+    width: 25%;
+    height: 20%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+} */
+
+btn-header {
+    size: 20px;
+    padding: 10px;
+}

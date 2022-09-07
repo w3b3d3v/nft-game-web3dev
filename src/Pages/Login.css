@@ -1,0 +1,97 @@
+
+main {
+    background-image: url('../imgs/metamask.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #remember {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+.login-page {
+    background-color: red;
+    border-radius: 15px;
+    color: white;
+    width: 30%;
+    margin: auto;
+    height: 350px;
+    background-image: linear-gradient(
+      to right,
+      #ff8177 0%,
+      #ff867a 0%,
+      #ff8c7f 21%,
+      #f99185 52%,
+      #cf556c 78%,
+      #b12a5b 100%
+    );
+    background-size: 200% 200%;
+    animation: gradient-animation 4s ease infinite;
+    opacity: 0.93;
+    box-shadow: 10px 10px 30px black;
+  }
+  
+  .login-page button{
+    width: 70%;
+    padding: 10px;
+    font-size: 25px;
+    box-shadow: 5px 5px 10px black;
+    background-image: linear-gradient(135deg, 
+    #667eea 0%,
+    #66dbea 25%,
+    #9f66ea 50%,
+    #764ba2 100%);
+    background-size: 600% 600%;
+    animation: gradient-animation 8s ease infinite;
+    text-shadow: 2px 5px 10px black;
+  }
+  
+  
+  .login-page input{
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 2px 5px 10px;
+    text-align: center;
+  }
+
+  .login-page h1{
+    border-radius: 10px;
+    padding: 15px;
+    text-shadow: 2px 5px 10px black;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+
+  .showpassword {
+    position: absolute;
+    top: 10px;
+    right: 85px;
+    color: black;
+    font-size: 20px;
+  }
+
+.remember-container {
+  padding-right: 60px;
+  padding-left: 60px;
+  width: 410px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.remember-input {
+  display: flex;
+  align-items: center;
+  text-shadow: 2px 5px 10px black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 5px 10px black;
+}
+
