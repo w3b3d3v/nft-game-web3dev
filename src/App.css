@@ -1,4 +1,5 @@
 .App {
+  width: 1366px;
   height: 100vh;
   background-color: #0d1116;
   overflow: scroll;
@@ -48,9 +49,8 @@
 
 .connect-wallet-container {
   display: flex;
-  flex-direction: column;
-  margin: auto;
-  max-width: 550px;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .connect-wallet-container img {
@@ -71,6 +71,80 @@
   animation: gradient-animation 4s ease infinite;
 }
 
+.imgwal2 {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to right,
+    #b99ae8 0, #9883e0 25%, #6c6cd8 50%, #2258d0 75%, #0048c9 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  margin-bottom: 25px;
+}
+
+.imgwal {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#testebtn {
+  top: 300px;
+  width: 356px;
+  height: 100px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.95;
+  box-shadow: 5px 10px 20px black;
+}
+
+.imgwal img {
+  position: absolute;
+  width: 100vh;
+}
+
+.imgwal2 img{
+  max-width: 100vh;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  /* transition: 0.6s; */
+}
+
+.imgwal2 img:hover{
+  max-width: 90vh;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  transition: 0.6s;
+}
+
+.imgwal2 p{
+  color: white;
+  padding: .6rem 2rem;
+  border: 2px solid;
+  font: weight 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+.imgwal2 img {
+  max-width: 80vh;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+
 .mint-button {
   background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
   background-size: 200% 200%;
@@ -89,21 +163,28 @@
 }
 
 .footer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-bottom: 30px;
 }
 
-.twitter-logo {
-  width: 35px;
-  height: 35px;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d1116;
+  overflow: scroll;
+  text-align: center;
 }
 
 .footer-text {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
+}
+
+.footer-text a {
+  font-size: 30px;
+  margin: 10px;
 }
 
 /* KeyFrames */

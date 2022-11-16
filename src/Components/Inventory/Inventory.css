@@ -1,0 +1,124 @@
+body {
+    background-color: #0d1116;
+    text-align: center;
+}
+
+.select-character-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: #0d1116;
+  }
+
+  .stats2{
+    padding: 20px;
+  }
+  
+  .image-content2 .health-bar2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+  }
+  
+  .health-bar2 progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 120%;
+  }
+  
+  .health-bar2 progress[value]::-webkit-progress-bar {
+    background-color: #e5652e;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .health-bar2 progress[value]::-webkit-progress-value {
+    background-color: #70cb1b;
+  }
+  
+  .health-bar2 p {
+    position: absolute;
+    width: 100%;
+    font-weight: bold;
+    color: black;
+    bottom: -15px;
+  }
+  
+  .players-container2 .player2 {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+    background-image: linear-gradient(135deg, 
+    #667eea 0%,
+    #66dbea 25%,
+    #9f66ea 50%,
+    #764ba2 100%);
+    background-size: 600% 600%;
+    animation: gradient-animation 8s ease infinite;
+    margin-bottom: 25px;
+  }
+  
+  
+  .player2 .image-content2 img {
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+    .player2 .image-content2 {
+    position: relative;
+    }
+  
+  .player2 .image-content2 img:hover {
+    width: 358px;
+    height: 636px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.6s;
+  }
+  
+  .players-container2 .active-players2 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .active-players .players-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    overflow: scroll;
+  }
+  
+  .players-list .active-player-item {
+    display: flex;
+    align-items: center;
+    background-color: #b12a5b;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .active-player-item .player-image {
+    width: 64px;
+    height: 64px;
+    background-color: gray;
+    margin-right: 15px;
+    border-radius: 8px;
+  }
+  
+  .active-player-item .player-content {
+    flex-direction: column;
+    text-align: left;
+  }
+  
