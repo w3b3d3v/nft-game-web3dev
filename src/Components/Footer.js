@@ -1,15 +1,14 @@
 import React from 'react';
 import { AiFillInstagram } from "react-icons/ai";
-import { FaLinkedin, FaTwitterSquare } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    // <footer className="footer-container"></footer>
     <footer className="footer-container">
         <div className="footer-text">
             Desenvolvido por Hatus Albertassi
             <br></br>
-            <a href='https://www.linkedin.com/in/hatus-albertassi-23b78186/'>
+            <a href='https://www.linkedin.com/in/hatusalbertassi/'>
             <FaLinkedin />
             </a>
         <br></br>
@@ -25,6 +24,9 @@ const Footer = () => {
             <AiFillInstagram
              />
             </a>
+            <a href="https://github.com/albertassihatus">
+            <FaGithub />
+          </a>
         </div>
     </footer>
   );
