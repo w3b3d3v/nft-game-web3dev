@@ -1,12 +1,11 @@
-import React from "react"
 import twitterLogo from "./assets/twitter-logo.svg"
-import "./App.css"
+import './App.css'
 
 // Constants
 const TWITTER_HANDLE = "web3dev_"
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`
 
-const App = () => {
+function App() {
   return (
     <div className="App">
       <div className="container">
@@ -15,7 +14,7 @@ const App = () => {
           <p className="sub-text">Junte-se a mim para vencer os inimigos do Metaverso!</p>
           <div className="connect-wallet-container">
             <img
-              src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
+              src="https://i.imgur.com/NqlaaTJ.gif"
               alt="Nascimento Gif"
             />
           </div>
