@@ -224,37 +224,7 @@
 /* Toast */
 #toast {
   visibility: hidden;
-  max-width: 500px;
-  height: 90px;
-  margin: auto;
-  background-color: gray;
-  color: #fff;
-  text-align: center;
-  border-radius: 10px;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  bottom: 30px;
-  font-size: 17px;
-  white-space: nowrap;
-}
-
-#toast #desc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 28px;
-  font-weight: bold;
-  height: 90px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-#toast {
-  visibility: hidden;
-  max-width: 500px;
+  max-width: 45vw;
   height: 90px;
   margin: auto;
   background-color: gray;
