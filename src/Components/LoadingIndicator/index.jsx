@@ -1,5 +1,5 @@
-import React from 'react';
-import './LoadingIndicator.css';
+import React from "react";
+import "./LoadingIndicator.css";
 
 const LoadingIndicator = () => {
   return (

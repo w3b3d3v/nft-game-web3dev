@@ -1,171 +1,158 @@
-import React, { useEffect, useState } from "react"
-import twitterLogo from "./assets/twitter-logo.svg"
-import "./App.css"
-import SelectCharacter from "./Components/SelectCharacter"
-import { CONTRACT_ADDRESS, transformCharacterData } from "./constants"
-import myEpicGame from "./utils/MyEpicGame.json"
-import { ethers } from "ethers"
-import Arena from './Components/Arena'
+import { useEffect, useState } from "react";
+import { ethers } from "ethers";
+import { CONTRACT_ADDRESS, transformCharacterData } from "./constants";
+import myEpicGame from "./utils/MyEpicGame.json";
+import twitterLogo from "./assets/twitter-logo.svg";
+import SelectCharacter from "./Components/SelectCharacter";
 import LoadingIndicator from "./Components/LoadingIndicator";
+import Arena from "./Components/Arena";
+import "./App.css";
 
-// Constants
-const TWITTER_HANDLE = "web3dev_"
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`
+// Constantes
+const TWITTER_HANDLE = "Web3dev_";
+const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
 const App = () => {
-  /*
-   * Só uma variável de estado que vamos usar para armazenar a carteira pública do usuário.
-   */
-  const [currentAccount, setCurrentAccount] = useState(null)
-  const [characterNFT, setCharacterNFT] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
-  /*
-   * Comece criando uma nova ação que vamos rodar enquanto os componentes carregam
-   */
-  // Ações
+  const [currentAccount, setCurrentAccount] = useState(null);
+  const [characterNFT, setCharacterNFT] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const checkIfWalletIsConnected = async () => {
     try {
-      const { ethereum } = window
+      const { ethereum } = window;
 
       if (!ethereum) {
-        console.log("Eu acho que você não tem a metamask!")
-        return
+        console.log("Parece que você não tem a metamask instalada!");
+        setIsLoading(false);
+        return;
       } else {
-        console.log("Nós temos o objeto ethereum", ethereum)
-      }
-      /*
-       * Checa se estamos autorizados a acessar a carteira do usuário.
-       */
-      const accounts = await ethereum.request({ method: "eth_accounts" })
+        console.log("Objeto ethereum encontrado:", ethereum);
 
-      /*
-       * Usuário pode ter múltiplas contas autorizadas, pegamos a primeira se estiver ali!
-       */
-      if (accounts.length !== 0) {
-        const account = accounts[0]
-        console.log("Carteira conectada::", account)
-        setCurrentAccount(account)
-      } else {
-        console.log("Não encontramos uma carteira conectada")
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+
+        if (accounts.length !== 0) {
+          const account = accounts[0];
+          console.log("Carteira conectada:", account);
+          setCurrentAccount(account);
+        } else {
+          console.log("Não foi encontrada uma carteira conectada");
+        }
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    setIsLoading(false)
+    setIsLoading(false);
+  };
 
-  }
-
-  const connectWalletAction = async () => {
-    try {
-      const { ethereum } = window
-
-      if (!ethereum) {
-        alert("Instale a MetaMask!")
-        return
-      }
-
-      /*
-       * Método chique para pedir acesso para a conta.
-       */
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      })
-
-      /*
-       * Boom! Isso deve escrever o endereço público uma vez que autorizarmos Metamask.
-       */
-      console.log("Contectado", accounts[0])
-      setCurrentAccount(accounts[0])
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  // Métodos de renderização
   const renderContent = () => {
-    /*
-     * cenário #1
-     */
     if (isLoading) {
-      return <LoadingIndicator />
+      return <LoadingIndicator />;
     }
 
     if (!currentAccount) {
       return (
         <div className="connect-wallet-container">
-          <img
-            src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
-            alt="Nascimento Gif"
-          />
+          <img src="https://i.imgur.com/NqlaaTJ.gif" alt="Nascimento Gif" />
           <button
             className="cta-button connect-wallet-button"
             onClick={connectWalletAction}
           >
-            Conecte sua carteira para começar
+            Conecte sua carteira
           </button>
         </div>
-      )
-      /*
-       * cenário #2
-       */
+      );
     } else if (currentAccount && !characterNFT) {
-      return <SelectCharacter setCharacterNFT={setCharacterNFT} />
+      return <SelectCharacter setCharacterNFT={setCharacterNFT} />;
+    } else if (currentAccount && characterNFT) {
+      return (
+        <Arena characterNFT={characterNFT} setCharacterNFT={setCharacterNFT} />
+      );
     }
-    else if (currentAccount && characterNFT) {
-      return <Arena characterNFT={characterNFT} setCharacterNFT={setCharacterNFT} />
+  };
+
+  const connectWalletAction = async () => {
+    try {
+      const { ethereum } = window;
+
+      if (!ethereum) {
+        alert("Instale a MetaMask!");
+        return;
+      }
+
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+
+      console.log("Contectado", accounts[0]);
+      setCurrentAccount(accounts[0]);
+    } catch (error) {
+      console.log(error);
     }
-
-  }
-  /*
-   * Isso roda quando a página carrega.
-   */
-  useEffect(() => {
-    setIsLoading(true)
-    checkIfWalletIsConnected()
-  }, [])
+  };
 
   useEffect(() => {
-    /*
-     * A função que vamos chamar que interage com nosso contrato inteligente
-     */
+    checkIfWalletIsConnected();
+  }, []);
+
+  useEffect(() => {
+    const checkNetwork = async () => {
+      try {
+        if (window.ethereum.networkVersion !== "84532") {
+          alert("Please connect to Sepolia!");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  }, []);
+
+  // UseEffects
+  useEffect(() => {
+    setIsLoading(true);
+    checkIfWalletIsConnected();
+  }, []);
+
+  useEffect(() => {
     const fetchNFTMetadata = async () => {
-      console.log("Verificando pelo personagem NFT no endereço:", currentAccount)
+      console.log(
+        "Verificando pelo personagem NFT no endereço:",
+        currentAccount
+      );
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum)
-      const signer = provider.getSigner()
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
       const gameContract = new ethers.Contract(
         CONTRACT_ADDRESS,
         myEpicGame.abi,
         signer
-      )
+      );
 
-      const txn = await gameContract.checkIfUserHasNFT()
+      const txn = await gameContract.checkIfUserHasNFT();
       if (txn.name) {
-        console.log("Usuário tem um personagem NFT")
-        setCharacterNFT(transformCharacterData(txn))
+        console.log("Usuário tem um personagem NFT");
+        setCharacterNFT(transformCharacterData(txn));
       } else {
-        console.log("Nenhum personagem NFT foi encontrado")
+        console.log("Nenhum personagem NFT foi encontrado");
       }
 
-      setIsLoading(false)
+      setIsLoading(false);
+    };
 
-    }
-
-    /*
-     * Nós so queremos rodar isso se tivermos uma wallet conectada
-     */
     if (currentAccount) {
-      console.log("Conta Atual:", currentAccount)
-      fetchNFTMetadata()
+      console.log("Conta Atual:", currentAccount);
+      fetchNFTMetadata();
     }
-  }, [currentAccount])
+  }, [currentAccount]);
+
   return (
     <div className="App">
       <div className="container">
         <div className="header-container">
           <p className="header gradient-text">⚔️ Batalhas no Metaverso ⚔️</p>
-          <p className="sub-text">Junte-se a mim para vencer os inimigos do Metaverso!</p>
-
+          <p className="sub-text">
+            Junte-se a mim para vencer os inimigos do Metaverso!
+          </p>
           {renderContent()}
-
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
@@ -178,7 +165,7 @@ const App = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
