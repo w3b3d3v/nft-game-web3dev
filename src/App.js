@@ -14,10 +14,7 @@ const App = () => {
           <p className="header gradient-text">⚔️ Batalhas no Metaverso ⚔️</p>
           <p className="sub-text">Junte-se a mim para vencer os inimigos do Metaverso!</p>
           <div className="connect-wallet-container">
-            <img
-              src="https://thumbs.gfycat.com/AnchoredPleasedBergerpicard-size_restricted.gif"
-              alt="Nascimento Gif"
-            />
+            <img src="https://i.imgur.com/NqlaaTJ.gif" alt="Nascimento Gif" />
           </div>
         </div>
         <div className="footer-container">
